@@ -8,6 +8,8 @@ const menuItems = [
   { title: 'Home', path: '/' },
   { title: 'About', path: '/about' },
   { title: 'Services', path: '/services' },
+  { title: 'Teams', path: '/teams' },
+  { title: 'Projects', path: '/projects' },
   { title: 'Contact', path: '/contact' },
 ]
 
@@ -48,7 +50,6 @@ export default function Header() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Button
-                  
                   color="inherit"
                   component={Link}
                   to={item.path}

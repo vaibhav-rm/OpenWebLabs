@@ -8,6 +8,8 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
+import TeamsPage from './pages/TeamsPage'
+import ProjectsPage from './pages/ProjectsPage'
 
 const theme = createTheme({
   palette: {
@@ -63,15 +65,17 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <div className="min-h-screen bg-black text-green-400 relative overflow-hidden">
+        <div className="flex flex-col min-h-screen bg-black text-green-400 relative overflow-hidden">
           <AnimatedBackground />
           <Header />
-          <main>
+          <main className="flex-grow">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/teams" element={<TeamsPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
             </Routes>
           </main>
           <Footer />
