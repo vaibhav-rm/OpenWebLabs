@@ -1,4 +1,3 @@
-import React from 'react'
 import { Typography, Card, CardContent, Avatar, Grid } from '@mui/material'
 import { motion } from 'framer-motion'
 

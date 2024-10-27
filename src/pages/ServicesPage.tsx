@@ -1,4 +1,3 @@
-import React from 'react'
 import { Typography, Container, Grid, Card, CardContent } from '@mui/material'
 import { motion } from 'framer-motion'
 import { Code, Cloud, Lock, Zap, Database, Cpu } from 'lucide-react'

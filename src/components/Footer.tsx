@@ -1,4 +1,3 @@
-import React from 'react'
 import { Typography, Link, Grid, IconButton } from '@mui/material'
 import { GitHub, Twitter, LinkedIn } from '@mui/icons-material'
 import { motion } from 'framer-motion'
