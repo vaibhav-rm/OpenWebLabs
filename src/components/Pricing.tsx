@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Typography, Button, Card, CardContent, CardActions, Grid } from '@mui/material'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { Check } from 'lucide-react'
 
 const plans = [
@@ -26,12 +26,15 @@ const plans = [
 ]
 
 export default function Pricing() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+
   return (
-    <section id="pricing" className="py-20 bg-black">
+    <section ref={ref} id="pricing" className="py-20 bg-black">
       <Typography variant="h2" align="center" gutterBottom className="text-4xl font-bold mb-12 text-green-400">
         <motion.span
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
         >
           Flexible Pricing
@@ -41,8 +44,8 @@ export default function Pricing() {
         {plans.map((plan, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
             >
@@ -73,7 +76,7 @@ export default function Pricing() {
                     className={plan.highlighted ? 'bg-fuchsia-400 text-black hover:bg-fuchsia-500' : 'text-green-400 border-green-400 hover:bg-green-400 hover:text-black'}
                   >
                     <motion.span
-                      animate={{ scale: [1, 1.1, 1] }}
+                      animate={isInView ? { scale: [1, 1.1, 1] } : {}}
                       transition={{ duration: 1, repeat: Infinity }}
                     >
                       {plan.buttonText}
