@@ -1,4 +1,3 @@
-import React from 'react'
 import { Typography, Grid, Paper } from '@mui/material'
 import { motion } from 'framer-motion'
 import { Code, Rocket, Zap, Globe, Shield, Cpu } from 'lucide-react'

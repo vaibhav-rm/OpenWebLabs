@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { Typography, Button, Container } from '@mui/material'
 import { motion, useInView } from 'framer-motion'
 

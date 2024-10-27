@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import { motion } from 'framer-motion'
@@ -85,7 +85,6 @@ export default function Header() {
         <List>
           {menuItems.map((item) => (
             <ListItem
-              button
               key={item.title}
               component={Link}
               to={item.path}
